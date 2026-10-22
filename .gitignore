@@ -1,0 +1,9 @@
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+
+# Claude Code local files (not deliverables)
+.claude/plan/
+.claude/settings.local.json
+.claude/scheduled_tasks.lock

@@ -5,7 +5,7 @@ driven with `tests/e2e/tmux_start.sh` and `tmux_send.sh`. Newest first.
 
 ## How the runs were done
 
-- Fixture: `tests/e2e/fixture-project` (a 48-line URL-shortener design with planted
+- Fixture: `tests/e2e/fixture-project` (a 47-line URL-shortener design with planted
   flaws, plus `app/redirect.py`).
 - Feature idea: let marketing kill a short link and optionally set an expiry.
 - An agent played the human at every gate, gave the same answers in each run, and

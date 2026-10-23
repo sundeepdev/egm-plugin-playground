@@ -13,7 +13,7 @@ Claude Code support on 2026-10-22, so the port was dropped
 ## Layout
 
 ```
-tests/e2e/fixture-project/   48-line URL-shortener design with planted flaws + app/redirect.py
+tests/e2e/fixture-project/   47-line URL-shortener design with planted flaws + app/redirect.py
 tests/e2e/setup_project.sh   copy the fixture to a new dir and install egm@egm (project scope)
 tests/e2e/run_review_e2e.sh  headless review-loop run + transcript assertions
 tests/e2e/check_review_run.py  the assertions

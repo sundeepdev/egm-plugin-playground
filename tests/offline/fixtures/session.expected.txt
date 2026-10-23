@@ -1,0 +1,6 @@
+brainstorm   2.0 min | subagents  1 | uncached in    150k | cache read  0.90M | out    50k
+draft        5.0 min | subagents  0 | uncached in     70k | cache read  3.00M | out    45k
+review      10.0 min | subagents  1 | uncached in    450k | cache read  9.30M | out   205k
+TOTAL       17.0 min | subagents  2 | uncached in    670k | cache read 13.20M | out   300k
+spawns: {'egm:egm-synthesizer': 1, 'egm:egm-zoom-out': 1}
+subagent tools: {'egm:egm-synthesizer': ['Read'], 'egm:egm-zoom-out': ['Glob', 'Read']}

@@ -1,0 +1,11 @@
+{"type": "summary", "note": "no timestamp: ignored"}
+{"type": "user", "timestamp": "2026-10-23T00:00:00Z", "message": {"role": "user", "content": "hello before any skill"}}
+{"type": "assistant", "timestamp": "2026-10-23T00:00:00Z", "message": {"id": "m0", "role": "assistant", "content": [{"type": "text", "text": "ok"}], "usage": {"input_tokens": 0, "cache_creation_input_tokens": 999000, "cache_read_input_tokens": 0, "output_tokens": 999000}}}
+{"type": "user", "timestamp": "2026-10-23T00:01:00Z", "message": {"role": "user", "content": "<command-name>/egm:egm-brainstorm</command-name> idea"}}
+{"type": "assistant", "timestamp": "2026-10-23T00:02:00Z", "message": {"id": "m1", "role": "assistant", "content": [{"type": "tool_use", "name": "Agent", "input": {"subagent_type": "egm:egm-synthesizer"}}], "usage": {"input_tokens": 10, "cache_creation_input_tokens": 120000, "cache_read_input_tokens": 500000, "output_tokens": 40000}}}
+{"type": "assistant", "timestamp": "2026-10-23T00:02:00Z", "message": {"id": "m1", "role": "assistant", "content": [{"type": "text", "text": "ok"}], "usage": {"input_tokens": 10, "cache_creation_input_tokens": 120000, "cache_read_input_tokens": 500000, "output_tokens": 40000}}}
+{"type": "user", "timestamp": "2026-10-23T00:11:00Z", "message": {"role": "user", "content": "<command-name>/egm:egm_draft</command-name> docs/designs/x.md"}}
+{"type": "assistant", "timestamp": "2026-10-23T00:16:00Z", "message": {"id": "m2", "role": "assistant", "content": [{"type": "text", "text": "ok"}], "usage": {"input_tokens": 0, "cache_creation_input_tokens": 70000, "cache_read_input_tokens": 3000000, "output_tokens": 45000}}}
+{"type": "user", "timestamp": "2026-10-23T00:21:00Z", "message": {"role": "user", "content": "<command-name>/egm:egm-review</command-name> docs/designs/x.md"}}
+{"type": "assistant", "timestamp": "2026-10-23T00:31:00Z", "message": {"id": "m3", "role": "assistant", "content": [{"type": "tool_use", "name": "Agent", "input": {"subagent_type": "egm:egm-zoom-out"}}], "usage": {"input_tokens": 0, "cache_creation_input_tokens": 400000, "cache_read_input_tokens": 9000000, "output_tokens": 200000}}}
+{not valid json

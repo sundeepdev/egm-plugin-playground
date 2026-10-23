@@ -20,9 +20,13 @@ fixture projects (ADR 0001: the earlier vendored port was dropped).
 ## Tech stack
 
 - Stack: bash + stdlib Python scripts in `tests/e2e/`; Claude Code 2.1+, tmux.
-- Run / Tests: see README (`tests/e2e/run_review_e2e.sh` for the headless check,
-  `tmux_start.sh` + `tmux_send.sh` for full interactive runs). Real model runs: the
-  `claude` on PATH must be 2.1+ and logged in, or set `CLAUDE_BIN`.
+- Run / Tests: `tests/offline/check.sh` is free and offline, and is the gate's Test
+  command. The real-model runs stay manual: `tests/e2e/run_review_e2e.sh` (about $1)
+  and `tmux_start.sh` + `tmux_send.sh` for full interactive runs. They need a 2.1+,
+  logged-in `claude` on PATH, or set `CLAUDE_BIN`.
+- If `run_metrics.py` output changes on purpose, update
+  `tests/offline/fixtures/session.expected.txt` only after checking the new numbers
+  by hand.
 
 ## Testing notes
 

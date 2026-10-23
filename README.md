@@ -21,6 +21,7 @@ tests/e2e/run_metrics.py     tokens/time/subagents for a finished session
 tests/e2e/converse.py        drive a multi-turn headless session (claude -p --resume)
 tests/e2e/tmux_start.sh      start an interactive session in tmux on a fresh project
 tests/e2e/tmux_send.sh       type into it and wait for the next gate
+tests/offline/check.sh       free offline checks (the gate's Test command)
 ```
 
 ## Requirements
@@ -30,6 +31,19 @@ tests/e2e/tmux_send.sh       type into it and wait for the next gate
 
 Setup registers the `egm` marketplace in your user settings. The plugin itself is
 enabled only inside each throwaway project.
+
+## Offline checks
+
+```bash
+tests/offline/check.sh
+```
+
+This is free and needs no network or model calls. It checks the syntax of every
+script, imports every Python file, and runs `run_metrics.py` on a recorded
+transcript in `tests/offline/fixtures/`, comparing the result with
+`session.expected.txt`. It is also the no-mistakes gate's Test command
+(`.no-mistakes.yaml`). The gate reads that file only from `main`, so it takes
+effect once merged.
 
 ## Headless check
 

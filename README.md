@@ -39,7 +39,8 @@ tests/offline/check.sh
 ```
 
 This is free and needs no network or model calls. It checks the syntax of every
-script, imports every Python file, and runs `run_metrics.py` on a recorded
+script, imports every harness Python script under `tests/` (not the
+fixture project's app code), and runs `run_metrics.py` on a recorded
 transcript in `tests/offline/fixtures/`, comparing the result with
 `session.expected.txt`. It is also the no-mistakes gate's Test command
 (`.no-mistakes.yaml`). The gate reads that file only from `main`, so it takes

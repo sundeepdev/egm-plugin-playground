@@ -1,41 +1,44 @@
-# PROJECT_NAME
+# egm-plugin-playground
 
 Project-specific context. Global preferences live in `~/.claude/AGENTS.md`
 (persona, no mdash, E2E-first testing, no low-cost bias); do not repeat them here.
 
 ## What this is
 
-TBD. Describe the project in a sentence once it is defined.
+End-to-end tests for Google's official Elephant-Goldfish Model (EGM) plugin in Claude
+Code. The tests install `egm@egm` from `google/elephant-goldfish-model` into throwaway
+fixture projects (ADR 0001: the earlier vendored port was dropped).
 
 ## Requirements
 
-Filled by the `/project-intake` skill. Anything unknown stays `TBD (decide later)`
-and can be filled on a later intake run.
-
-- Delivery / platform: TBD (web app | hybrid | cross-platform native | web-first then native | desktop)
-- Data & persistence: TBD (none | on-device | hosted database | not sure)
-- Users & accounts: TBD (none | accounts/auth | multi-tenant | SSO)
-- Connectivity: TBD (offline-first | online-only | both)
-- Scale & distribution: TBD (personal | small group | public/at-scale)
+- Delivery / platform: test harness for a Claude Code plugin (no shipped artifact)
+- Data & persistence: none
+- Users & accounts: none
+- Connectivity: online (needs a logged-in Claude Code)
+- Scale & distribution: personal
 
 ## Tech stack
 
-DELIBERATELY UNSPECIFIED until Requirements are understood. Chosen from the problem
-(users, platform, constraints), not from habit or from whatever is least effort.
-`/project-intake` proposes a stack from the answers above; record the decision here.
+- Stack: bash + stdlib Python scripts in `tests/e2e/`; Claude Code 2.1+, tmux.
+- Run / Tests: see README (`tests/e2e/run_review_e2e.sh` for the headless check,
+  `tmux_start.sh` + `tmux_send.sh` for full interactive runs). Real model runs: the
+  `claude` on PATH must be 2.1+ and logged in, or set `CLAUDE_BIN`.
 
-- Stack: TBD
-- Run: TBD
-- Tests: TBD (prefer end-to-end tests first, per global preference)
+## Testing notes
+
+- Record full-run results in `docs/egm-runs.md` (same fixture and answers, for
+  comparable numbers).
+- Get token and time numbers with `tests/e2e/run_metrics.py
+  ~/.claude/projects/<project-slug>` (reads main and subagent transcripts).
+- Headless `system/init` lists skill commands by folder name (`egm:egm_review`), but
+  the documented `/egm:egm-review` works interactively. Check names in the `/` menu.
+- In tmux, an idle prompt can show ghost-text suggestions; they are not typed input.
 
 ## Security & compliance
 
-Filled by `/project-intake` based on what the project handles. Only what applies is
-listed; unknowns stay `TBD (decide later)`.
-
-- Sensitive data handled: TBD (none | personal/PII | children's | payments | health | other)
-- Applicable regimes / controls: TBD
-- Recommended audits: TBD
+- Sensitive data handled: none
+- Applicable regimes / controls: none (no upstream code is vendored)
+- Recommended audits: TBD (decide later)
 
 ## Issue tracking
 

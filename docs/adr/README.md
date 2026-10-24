@@ -27,4 +27,4 @@ The options not chosen, and why. (Record the not-chosen option so it is not re-l
 
 ## Index
 
-(none yet)
+- [0001. Test the official EGM plugin instead of maintaining a Claude Code port](0001-use-official-egm-plugin.md)

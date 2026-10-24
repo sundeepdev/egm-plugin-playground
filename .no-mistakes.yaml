@@ -1,0 +1,5 @@
+# no-mistakes gate config. `commands` is read only from the default branch.
+commands:
+  # Free and offline only. The E2E scripts in tests/e2e/ call a real model
+  # (about $1 per headless run) and stay manual.
+  test: "tests/offline/check.sh"
